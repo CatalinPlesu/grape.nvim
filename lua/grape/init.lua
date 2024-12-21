@@ -1,7 +1,7 @@
-local config = require("kiwi.config")
-local utils = require("kiwi.utils")
-local todo = require("kiwi.todo")
-local wiki = require("kiwi.wiki")
+local config = require("grape.config")
+local utils = require("grape.utils")
+local todo = require("grape.todo")
+local wiki = require("grape.wiki")
 
 local M = {}
 

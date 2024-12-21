@@ -1,5 +1,5 @@
-local config = require("kiwi.config")
-local utils = require("kiwi.utils")
+local config = require("grape.config")
+local utils = require("grape.utils")
 
 local M = {}
 
@@ -16,14 +16,14 @@ M.open_wiki_index = function(name)
       utils.prompt_folder(config)
     end
   else
-    require("kiwi").setup()
+    require("grape").setup()
   end
   local wiki_index_path = vim.fs.joinpath(config.path, "index.md")
   local buffer_number = vim.fn.bufnr(wiki_index_path, true)
   vim.api.nvim_win_set_buf(0, buffer_number)
   local opts = { noremap = true, silent = true, nowait = true }
-  vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"kiwi\").create_or_open_wiki_file()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"kiwi\").open_link()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"grape\").create_or_open_wiki_file()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"grape\").open_link()<CR>", opts)
   vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ":let @/=\"\\\\[.\\\\{-}\\\\]\"<CR>nl", opts)
 end
 
@@ -41,8 +41,8 @@ M.create_or_open_wiki_file = function()
   local buffer_number = vim.fn.bufnr(vim.fs.joinpath(config.path, filename), true)
   vim.api.nvim_win_set_buf(0, buffer_number)
   local opts = { noremap = true, silent = true, nowait = true }
-  vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"kiwi\").create_or_open_wiki_file()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"kiwi\").open_link()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"grape\").create_or_open_wiki_file()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"grape\").open_link()<CR>", opts)
   vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ":let @/=\"\\\\[.\\\\{-}\\\\]\"<CR>nl", opts)
 end
 
@@ -59,8 +59,8 @@ M.open_link = function()
     if buffer_number ~= -1 then
       vim.api.nvim_win_set_buf(0, buffer_number)
       local opts = { noremap = true, silent = true, nowait = true }
-      vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"kiwi\").create_or_open_wiki_file()<CR>", opts)
-      vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"kiwi\").open_link()<CR>", opts)
+      vim.api.nvim_buf_set_keymap(buffer_number, "v", "<CR>", ":'<,'>lua require(\"grape\").create_or_open_wiki_file()<CR>", opts)
+      vim.api.nvim_buf_set_keymap(buffer_number, "n", "<CR>", ":lua require(\"grape\").open_link()<CR>", opts)
       vim.api.nvim_buf_set_keymap(buffer_number, "n", "<Tab>", ":let @/=\"\\\\[.\\\\{-}\\\\]\"<CR>nl", opts)
     end
   else

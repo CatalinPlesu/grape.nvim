@@ -1,28 +1,28 @@
-# kiwi.nvim 🥝
+# grape.nvim 🍇
 
-[![Hits](https://hits.sh/github.com/serenevoid/kiwi.nvim.svg)](https://hits.sh/github.com/serenevoid/kiwi.nvim/)
+[![Hits](https://hits.sh/github.com/CatalinPlesu/grape.nvim.svg)](https://hits.sh/github.com/CatalinPlesu/grape.nvim/)
 
 - [Intro](#introduction)
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Key Bindings](#key-bindings)
-- [Helping kiwi.nvim](#helping-kiwinvim)
+- [Helping grape.nvim](#helping-grapenvim)
 - [License](./LICENSE)
 
 ----
 
 ## Introduction
 
-`kiwi.nvim` is a stripped down version of VimWiki for Neovim. 
+`grape.nvim` is a stripped down version of VimWiki for Neovim. 
 
-| VimWiki | kiwi.nvim |
+| VimWiki | grape.nvim |
 |---|---|
 | Multiple syntaxes | Sticks to markdown |
 | Syntax highlights included | User can install Treesitter plugins `markdown` and `markdown-inline` if required |
 | Keymaps like Backspace for autosave | Stick to manual saves and `<C-o>` to move back |
 
-With `kiwi.nvim`, you can:
+With `grape.nvim`, you can:
 
 - Organize notes and ideas
 - Manage to-do lists
@@ -66,12 +66,12 @@ The result should look something like:
 
 ## Installation
 
-`kiwi.nvim` has been tested on **Neovim >= 0.7**. It will likely work on older
+`grape.nvim` has been tested on **Neovim >= 0.7**. It will likely work on older
 versions but will not be officially supported.
 
 ### Dependencies
 
-`kiwi.nvim` is a standalone plugin.
+`grape.nvim` is a standalone plugin.
 
 ### Installation using [Vim-Plug](https://github.com/junegunn/vim-plug)
 
@@ -79,7 +79,7 @@ Add the following to the plugin-configuration in your vimrc:
 
 ```vim
 
-Plug 'serenevoid/kiwi.nvim'
+Plug 'CatalinPlesu/grape.nvim'
 
 ```
 
@@ -90,7 +90,7 @@ Then run `:PlugInstall`.
 ```lua
 
 use {
-    'serenevoid/kiwi.nvim'
+    'CatalinPlesu/grape.nvim'
 }
 
 ```
@@ -101,12 +101,12 @@ use {
 
 -- init.lua:
 {
-    'serenevoid/kiwi.nvim'
+    'CatalinPlesu/grape.nvim'
 }
 
--- plugins/kiwi.lua:
+-- plugins/grape.lua:
 return {
-    'serenevoid/kiwi.nvim'
+    'CatalinPlesu/grape.nvim'
 }
 
 ```
@@ -116,7 +116,7 @@ return {
 For [Lazy](https://github.com/folke/lazy.nvim) users,
 ```lua
 {
-    'serenevoid/kiwi.nvim',
+    'CatalinPlesu/grape.nvim',
     opts = {
         {
             name = "work",
@@ -128,9 +128,9 @@ For [Lazy](https://github.com/folke/lazy.nvim) users,
         }
     },
     keys = {
-        { "<leader>ww", ":lua require(\"kiwi\").open_wiki_index()<cr>", desc = "Open Wiki index" },
-        { "<leader>wp", ":lua require(\"kiwi\").open_wiki_index(\"personal\")<cr>", desc = "Open index of personal wiki" },
-        { "T", ":lua require(\"kiwi\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
+        { "<leader>ww", ":lua require(\"grape\").open_wiki_index()<cr>", desc = "Open Wiki index" },
+        { "<leader>wp", ":lua require(\"grape\").open_wiki_index(\"personal\")<cr>", desc = "Open index of personal wiki" },
+        { "T", ":lua require(\"grape\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
     },
     lazy = true
 }
@@ -139,7 +139,7 @@ For [Lazy](https://github.com/folke/lazy.nvim) users,
 For others,
 ```lua
 -- Setup Custom wiki path if required
-require('kiwi').setup({
+require('grape').setup({
     {
         name = "work",
         path = "work-wiki"
@@ -152,11 +152,11 @@ require('kiwi').setup({
 -- Note: The path will be created in user home directory
 
 -- Use default path (i.e. ~/wiki/)
-local kiwi = require('kiwi')
+local grape = require('grape')
 
 -- Necessary keybindings
-vim.keymap.set('n', '<leader>ww', kiwi.open_wiki_index, {})
-vim.keymap.set('n', 'T', kiwi.todo.toggle, {})
+vim.keymap.set('n', '<leader>ww', grape.open_wiki_index, {})
+vim.keymap.set('n', 'T', grape.todo.toggle, {})
 ```
 
 ## Key bindings
@@ -166,7 +166,7 @@ vim.keymap.set('n', 'T', kiwi.todo.toggle, {})
 - `<Enter>` -- In visual mode: Follow/Create wiki link, in Normal mode just follow
 - `<Tab>` -- Find next wiki link.
 
-## Helping `kiwi.nvim`
+## Helping `grape.nvim`
 
 This is a new project which aims to be a minimal wiki plugin which is very barebones
 and doesn't add features which a lot people doesn't use now. You can help by raising issues 
@@ -174,4 +174,4 @@ and bug fixes to help develop this project for the neovim community.
 
 ## Stargazers over time
 
-[![Stargazers over time](https://starchart.cc/serenevoid/kiwi.nvim.svg)](https://starchart.cc/serenevoid/kiwi.nvim)
+[![Stargazers over time](https://starchart.cc/CatalinPlesu/grape.nvim.svg)](https://starchart.cc/CatalinPlesu/grape.nvim)
