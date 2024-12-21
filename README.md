@@ -14,8 +14,7 @@
 
 ## Introduction
 
-`grape.nvim` is a stripped down version of VimWiki for Neovim. 
-
+`grape.nvim` is a bloated version of kiwi.nvim which is a stripped down VimWiki for Neovim. The added faetures are support for `[[link to file]]` and Graph view for the files.
 | VimWiki | grape.nvim |
 |---|---|
 | Multiple syntaxes | Sticks to markdown |
@@ -25,9 +24,8 @@
 With `grape.nvim`, you can:
 
 - Organize notes and ideas
-- Manage to-do lists
-- Write documentation
-- Write blog posts to Hugo or Astro
+- Visualize your knowledge graph
+- Other things supported by [kiwi.nvim](https://github.com/serenevoid/kiwi.nvim/)
 
 To do a quick start, press `<Leader>ww` (default is `\ww`) to go to your index
 wiki file. By default, it is located in `~/wiki/index.md`.
@@ -56,6 +54,7 @@ The result should look something like:
 # My knowledge base
 - [Tasks](./Tasks.md) -- things to be done _yesterday_!!!
 - [Project Gutenberg](./Project_Gutenberg.md) -- good books are power.
+- [[Useful Links]]
 - Scratchpad -- various temporary stuff.
 ```
 

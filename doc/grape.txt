@@ -56,6 +56,7 @@ You can use a wiki in Neovim to:
 - manage to-do lists
 - write documentation
 - write blog posts to publish using Hugo or Astro
+- visualize graph
 
 
 =============================================================================
