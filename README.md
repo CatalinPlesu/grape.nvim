@@ -124,7 +124,8 @@ For [Lazy](https://github.com/folke/lazy.nvim) users,
         {
             name = "personal",
             path = "personal-wiki"
-        }
+        },
+        cd_wiki = false
     },
     keys = {
         { "<leader>ww", ":lua require(\"grape\").open_wiki_index()<cr>", desc = "Open Wiki index" },
@@ -146,7 +147,8 @@ require('grape').setup({
     {
         name = "personal",
         path = "personal-wiki"
-    }
+    },
+    cd_wiki = false
 })
 -- Note: The path will be created in user home directory
 
