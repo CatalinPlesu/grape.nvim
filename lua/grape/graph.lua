@@ -139,7 +139,7 @@ end
 
 graph.create_graph_json = function()
   local paths = get_wiki_paths()
-  local files = vim.fn.globpath(config.path, "*.md", true, true)
+local files = vim.fn.glob(config.path .. "/**/*.md", true, true)
   local nodes = {}
   local links = {}
   local file_ids = {}
@@ -257,7 +257,6 @@ graph.show_graph = function()
   local url = string.format("http://localhost:%d/%s/index.html", port, config.wiki_name)
   graph.open_in_browser(url)
 end
-
 
 -- Stops the server by terminating the background job
 graph.stop_server = function()
