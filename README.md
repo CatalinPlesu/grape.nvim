@@ -62,6 +62,7 @@ The result should look something like:
 
 ![custom_note.md](https://u.cubeupload.com/serenevoid/6JqlpX.png)
 ![todo.md](https://u.cubeupload.com/serenevoid/6JqlpX.png)
+![graph](https://i.imgur.com/p4dqG45.png)
 
 ## Installation
 
