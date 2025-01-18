@@ -10,6 +10,7 @@ M.open_wiki_index = function(name)
       for _, v in pairs(config.folders) do
         if v.name == name then
           config.path = v.path
+          config.wiki_name = name
         end
       end
     else
