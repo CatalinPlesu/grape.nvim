@@ -2,13 +2,21 @@
 
 [![Hits](https://hits.sh/github.com/CatalinPlesu/grape.nvim.svg)](https://hits.sh/github.com/CatalinPlesu/grape.nvim/)
 
-- [Intro](#introduction)
-- [Screenshots](#screenshots)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Key Bindings](#key-bindings)
-- [Helping grape.nvim](#helping-grapenvim)
-- [License](./LICENSE)
+- [grape.nvim 🍇](#grapenvim-)
+  - [Introduction](#introduction)
+  - [Screenshots](#screenshots)
+  - [Installation](#installation)
+    - [Dependencies](#dependencies)
+    - [Installation using Vim-Plug](#installation-using-vim-plug)
+    - [Installation using Packer](#installation-using-packer)
+    - [Installation using Lazy](#installation-using-lazy)
+  - [Usage](#usage)
+  - [Key bindings](#key-bindings)
+    - [Basic key bindings](#basic-key-bindings)
+  - [Helping `grape.nvim`](#helping-grapenvim)
+  - [Commands](#commands)
+    - [Commands for graph](#commands-for-graph)
+  - [Stargazers over time](#stargazers-over-time)
 
 ----
 
@@ -131,7 +139,10 @@ For [Lazy](https://github.com/folke/lazy.nvim) users,
     keys = {
         { "<leader>ww", ":lua require(\"grape\").open_wiki_index()<cr>", desc = "Open Wiki index" },
         { "<leader>wp", ":lua require(\"grape\").open_wiki_index(\"personal\")<cr>", desc = "Open index of personal wiki" },
-        { "T", ":lua require(\"grape\").todo.toggle()<cr>", desc = "Toggle Markdown Task" }
+        { "T", ":lua require(\"grape\").todo.toggle()<cr>", desc = "Toggle Markdown Task" },
+        { "<leader>wg", ":lua require(\"grape\").show_graph()<cr>", desc = "Shows the wiki graph" },
+        { "<leader>wR", ":lua require(\"grape\").refresh_graph()<cr>", desc = "Regenerate graph, requires manual page refresh" },
+        { "<leader>wS", ":lua require(\"grape\").stop_server()<cr>", desc = "Stops the graph server" },
     },
     lazy = true
 }
@@ -173,6 +184,14 @@ vim.keymap.set('n', 'T', grape.todo.toggle, {})
 This is a new project which aims to be a minimal wiki plugin which is very barebones
 and doesn't add features which a lot people doesn't use now. You can help by raising issues 
 and bug fixes to help develop this project for the neovim community.
+
+## Commands
+
+### Commands for graph
+
+- `ShowGraph` -- Show the graph
+- `RefreshGraph` -- Regenerate the data.json for selected wiki, it still requires tab reload in browser
+- `StopServer` -- Stops the http server that serves this files
 
 ## Stargazers over time
 
