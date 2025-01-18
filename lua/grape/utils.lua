@@ -145,6 +145,10 @@ utils.resolve_path = function(filename, config)
     filename = vim.fs.joinpath(base_path, filename)
   end
 
+  if not filename:match("%.md$") then
+    filename = filename .. ".md"
+  end
+
   return filename
 end
 

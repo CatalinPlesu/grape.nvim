@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style> body { margin: 0; } </style>
+
+  <script src="../force-graph.min.js
+"></script>
+</head>
+
+<body>
+  <div id="graph"></div>
+
+  <script>
+    fetch('./data.json').then(res => res.json()).then(data => {
+      const Graph = new ForceGraph(document.getElementById('graph'))
+        .graphData(data)
+        .nodeId('id')
+        .nodeVal('val')
+        .nodeLabel('id')
+        .nodeAutoColorBy('group')
+        .linkSource('source')
+        .linkTarget('target')
+    });
+  </script>
+</body>
+</html>
