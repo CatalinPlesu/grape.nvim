@@ -1,5 +1,6 @@
 local config = require("grape.config")
 local utils = require("grape.utils")
+local graph = require("grape.graph")
 
 local M = {}
 
@@ -11,6 +12,7 @@ M.open_wiki_index = function(name)
         if v.name == name then
           config.path = v.path
           config.wiki_name = name
+          graph.setup()
         end
       end
     else
